@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://torch/torch5.png" type="Texture" id=2]
+[ext_resource path="res://torch/torch6.png" type="Texture" id=3]
+[ext_resource path="res://torch/torch7.png" type="Texture" id=4]
+[ext_resource path="res://torch/torch4.png" type="Texture" id=5]
+[ext_resource path="res://torch/torch2.png" type="Texture" id=6]
+[ext_resource path="res://torch/torch3.png" type="Texture" id=7]
+
+[sub_resource type="AnimatedTexture" id=2]
+flags = 4
+frames = 6
+fps = 8.0
+frame_0/texture = ExtResource( 6 )
+frame_1/texture = ExtResource( 7 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 5 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 2 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 3 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 4 )
+frame_5/delay_sec = 0.0
+
+[node name="torch_counter" type="NinePatchRect"]
+margin_right = 241.0
+margin_bottom = 142.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -103.0
+margin_top = -110.0
+margin_right = 138.0
+margin_bottom = 180.0
+texture = SubResource( 2 )

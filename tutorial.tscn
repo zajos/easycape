@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://DungeonFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://bg.png" type="Texture" id=2]
+[ext_resource path="res://tutorial.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 125
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[node name="tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 640.0
+margin_bottom = 640.0
+rect_scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -436.0
+margin_top = -300.0
+margin_right = 588.0
+margin_bottom = 300.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 717.0
+margin_bottom = 1728.0
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_right = 717.0
+margin_bottom = 255.0
+custom_fonts/font = SubResource( 1 )
+text = "Nasıl Oynanır?
+	      "
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 259.0
+margin_right = 717.0
+margin_bottom = 1728.0
+custom_fonts/font = SubResource( 2 )
+text = "             <<<Kaydırın>>>
+Hareket etmek için mouse ile gideceğiniz yere tıklamanız ya da sürüklemeniz gerekmektedir. Zindandan kaçmak için karakteri meşalelere en yakın kareye hareket ettirin ve meşalelere tıklayın. Eğer 15 meşaleyi de yakarsanız, kapılar aktif olacaktır.Kapıları kullanmak için kapıya en yakın kareye gelip kapıya tıklamalısınız. Meşaleleri yakıp doğru kapıyı bulursanız kaçmayı başarırsınız. Bu esnada hortlaklardan kaçınmayı unutmayın. Hortlaklara yakalanırsanız canınız gider ve bütün canlarınız biterse kaçmayı başaramazsınız. Oyunu durdurmak için Esc'ye basabilirsiniz."
+autowrap = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 902.0
+margin_top = 255.0
+margin_right = 1025.0
+margin_bottom = 355.0
+custom_colors/font_color = Color( 0.827451, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 0.0470588, 0.890196, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Geç"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
